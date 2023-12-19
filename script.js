@@ -88,9 +88,33 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+var passwordLength=0;
+var passwordCharacters=[];
+
 // Function to prompt user for password options
 function getPasswordOptions() {
-
+  var numbers=false;
+  var special=false;
+  var upperCase = false;
+  numbers = confirm('Do you want to include numbers?');
+  //numeric characters
+if(numbers){
+  passwordCharacters=passwordCharacters.concat(numericCharacters);
+}
+special= confirm('Do you want to include Special characters?');
+if(special){
+  passwordCharacters=passwordCharacters.concat(specialCharacters);
+}
+//uppercased
+upperCase=confirm('Do you want to include Upper case characters?');
+if(upperCase){
+  passwordCharacters=passwordCharacters.concat(upperCasedCharacters);
+}
+//lower case
+lowerCase=confirm('Do you want to include Lower case characters');
+if(lowerCase){
+  passwordCharacters=passwordCharacters.concat(lowerCasedCharacters);
+}
 }
 
 // Function for getting a random element from an array
@@ -100,6 +124,9 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
+passwordCharacters=[];
+var tempPass='';
+
 
 }
 
