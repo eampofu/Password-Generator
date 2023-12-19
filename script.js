@@ -137,7 +137,7 @@ function generatePassword() {
   passwordLength = parseInt(
     prompt("Enter the length of the password between 8 and 128 characters")
   );
-
+console.log("the entered values "+passwordLength)
   if (!isNaN(passwordLength)) {
     if (passwordLength >= 8 && passwordLength <= 128) {
       getPasswordOptions();
@@ -147,9 +147,14 @@ function generatePassword() {
       }
      
     } else {
-      alert("invalid length Please try again");
+      // if user enters a number that is outside the reqiored range
+      alert("invalid length, Please try again");
       
     }
+  }
+  else{
+    //if user enters characters that are not numbers
+    alert("The value entered is not a number, Please try again");
   }
 
   return tempPass;
